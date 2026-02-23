@@ -138,7 +138,7 @@ lectureController.checkStock = async(item) => {
     const lecture = await Lecture.findById(item.lectureId);
 
     if(lecture.txtbkStck[item.txtbkType] < item.qty){
-        return {isVerify: false, message: `"${lecture.name}"의 "${item.txtbkType == 'bind' ? '제본(스프링) 교재' : '책 교재'}" 재고가 부족합니다.`};
+        return {isVerify: false, message: `"${lecture.name}" 강의의 "${item.txtbkType == 'bind' ? '제본(스프링) 교재' : '책 교재'}" 재고가 부족합니다.`};
     }
 
     const newStock = {...lecture.txtbkStck};
